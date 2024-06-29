@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #e6e6e6;
+      border-bottom: 1px solid #525252;
+    }
+    .header .logo {
+      flex: 1;
+      text-align: center;
+    }
+    .header .banner {
+      flex: 2;
+      text-align: center;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      background-color: #ebebeb;
+      padding: 10px 20px;
+    }
+    
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+    .list-product {
+      display: none;
+    }
+    .list-product.active {
+      display: block;
+    }
+    .navbar a {
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #000;
+    }
+    .main-content {
+      display: flex;
+      text-align: center;
+    }
+    .sidebar {
+      width: 200px;
+      padding: 20px;
+      border-right: 1px solid #5e5e5e;
+      background-color: #f7f7f7;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">
+    <p>Logo</p>
+  </div>
+  <div class="banner">
+    <p>Banner</p>
+  </div>
+</div>
+
+<div class="navbar">
+  <a href="#" onclick="showSection('home')">Home</a>
+  <a href="#" onclick="showSection('product')">Product</a>
+  <a href="#" onclick="showSection('order')">Order</a>
+</div>
+
+<div class="main-content">
+  <div class="sidebar">
+    <p>Side bar</p>
+  </div>
+  <div class="content">
+    <div id="home" class="list-product active">
+      <h2>Product</h2>
+    </div>
+    <div id="product" class="list-product">
+      <h2>List Product</h2> 
+    </div>
+    <div id="order" class="list-product">
+      <h2>List Order</h2>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll('.list-product');
+
+    sections.forEach(section => section.classList.remove('active'));
+    document.getElementById(sectionId).classList.add('active');
+
+    const menuItems = document.querySelectorAll('.navbar a');
+    menuItems.forEach(item => item.classList.remove('active'));
+    
+    document.querySelector('.navbar a[onclick="showSection(\'' + sectionId + '\')"]').classList.add('active');
+  }
+</script>
+
+</body>
+</html>

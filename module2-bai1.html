@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poodle của Duyy</title>
+
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.image {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.image-container {
+    text-align: center;
+    margin: 10px;
+    flex: 1 0 auto;
+
+    max-width: 40%;
+}
+
+.image-container img {
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+    
+}
+
+.image-container h3 {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+@media (min-width: 1200px) {
+    .image-container {
+        flex-basis: 22%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .image-container {
+        flex-basis: 45%;
+    }
+}
+
+@media (max-width: 900px) {
+    .image-container {
+        flex-basis: 100%;
+    }
+}
+</style>
+<body>
+    <div class="image">
+        <div class="image-container">
+            <img src="anh/1.jpg" alt="anh1">
+            <h3>1 Cặp Poodle</h3>
+        </div>
+        <div class="image-container">
+            <img src="anh/2.jpg" alt="anh2">
+            <h3>1 Cặp Poodle Nâu</h3>
+        </div>
+        <div class="image-container">
+            <img src="anh/3.jpg" alt="anh3">
+            <h3>Poodle Tiny</h3>
+        </div>
+        <div class="image-container">
+            <img src="anh/4.jpg" alt="anh4">
+            <h3>Poodle Trắng</h3>
+        </div>
+    </div>
+</body>
+</html>
